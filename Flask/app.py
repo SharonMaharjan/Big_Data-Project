@@ -19,7 +19,7 @@ ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
 app = Flask(__name__)
 
-learner = load_learner('export.pkl')
+learner = load_learner('../resnet50best.pkl')
 
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
@@ -40,9 +40,9 @@ def predict():
         pred = learner.predict(img)
         print(pred)
         # if you want a json reply, together with class probabilities:
-        return jsonify(str(pred))
+        # return jsonify(str(pred))
         # or if you just want the result
-        #return {'success': pred[0]}, 200
+        return {'success': pred[0]}, 200
 
     return {'error': 'something went wrong.'}, 500
 
