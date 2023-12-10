@@ -36,8 +36,8 @@ temp_file_path = './temp.jpg'
 
 #===============================Roboflow model setup=============================
 
-roboflow_API_Key = 'e1JIOC02zAwmRl50TYri'
-roboflow_model_endpoint = 'tomatoes-ntib8'
+
+
 roboflow_version = 2
 rf = Roboflow(api_key=roboflow_API_Key)
 project = rf.workspace().project(roboflow_model_endpoint)
@@ -87,11 +87,11 @@ credentials = service_account.Credentials.from_service_account_file("./teak-sun-
 # credentials.refresh(request)
 
 def predict_image_classification_sample(
-    project: str = "618340661486",
-    endpoint_id: str = "1528941287166705664",
+   
+   
     filename: str = "temp.jpg",
     location: str = "europe-west4",
-    api_endpoint: str = "europe-west4-aiplatform.googleapis.com",
+    
 ):
     # The AI Platform services require regional API endpoints
     client_options = {"api_endpoint": api_endpoint}
