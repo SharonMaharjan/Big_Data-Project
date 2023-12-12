@@ -19,7 +19,7 @@ ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
 app = Flask(__name__)
 
-learner = load_learner('../resnet50best.pkl')
+learner = load_learner('Flask/resnet50best.pkl')
 
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
